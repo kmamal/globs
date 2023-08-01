@@ -16,7 +16,7 @@ class Matcher {
 
 	matchesPath (path) {
 		const absPath = Path.resolve(this._options.cwd, path)
-		Rules.matchAbsPath(this._rules, absPath)
+		return Rules.matchAbsPath(this._rules, absPath)
 	}
 
 	async * getFiles (options) {
