@@ -13,9 +13,16 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@kmamal/fs": "^0.0.15",
     "@kmamal/util": "^0.1.11"
   },
   "devDependencies": {
     "@kmamal/testing": "^0.0.21"
+  },
+  "exports": {
+    "./matcher": "./src/matcher.js",
+    "./regex": "./src/regex.js",
+    "./rules": "./src/rules.js",
+    "./files": "./src/files.js"
   }
 }
