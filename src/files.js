@@ -1,6 +1,6 @@
 const Path = require('path')
 const Rules = require('./rules')
-const { recurse } = require('@kmamal/fs/recurse')
+const { recurse } = require('@kmamal/recurse')
 
 const filterWithRules = async function * (rules, options) {
 	const cwd = options?.cwd ? Path.resolve(options.cwd) : process.cwd()
