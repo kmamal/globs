@@ -1,5 +1,8 @@
+const Path = require('path')
 
 const _specialChars = new Set('\\^$*+?.()|[]{}')
+
+const sep = Path.sep.replaceAll('\\', '\\\\')
 
 const fromGlob = (glob) => {
 	const result = new Array(glob.length)
@@ -11,7 +14,7 @@ const fromGlob = (glob) => {
 		char = glob[readIndex++]
 		switch (char) {
 			case '/': {
-				result[writeIndex++] = '/'
+				result[writeIndex++] = sep
 
 				const next1 = glob[readIndex]
 				if (next1 !== '*') { break }
@@ -20,11 +23,11 @@ const fromGlob = (glob) => {
 				const next3 = glob[readIndex + 2]
 				if (next3 && next3 !== '/') { break }
 
-				result[writeIndex++] = '(.+/)*'
+				result[writeIndex++] = `(.+${sep})*`
 				readIndex += 3
 			} break
 			case '*': {
-				result[writeIndex++] = '[^/]*'
+				result[writeIndex++] = `[^${sep}]*`
 			} break
 			case '?': {
 				result[writeIndex++] = '.'
