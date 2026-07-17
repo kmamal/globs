@@ -4,24 +4,43 @@
   "description": "globs",
   "repository": {
     "type": "git",
+<<<<<<< HEAD
+    "url": "git@github.com:kmamal/globs.git"
+  },
+  "main": "src/index.js",
+=======
     "url": "git+ssh://git@github.com:kmamal/globs.git"
   },
   "license": "MIT",
+>>>>>>> 5943289 (initial commit)
   "scripts": {
     "test": "npx @kmamal/testing",
     "update-exports": "node ./scripts/update-exports.mjs"
   },
+<<<<<<< HEAD
+  "license": "MIT",
+  "dependencies": {
+    "@kmamal/recurse": "^0.0.1"
+  },
+  "devDependencies": {
+    "@kmamal/testing": "^0.0.24"
+=======
   "dependencies": {
     "@kmamal/recurse": "0.0.1"
   },
   "devDependencies": {
     "@kmamal/testing": "0.0.24"
+>>>>>>> 5943289 (initial commit)
   },
   "exports": {
-    "./regex": "./src/regex.js",
     "./matcher": "./src/matcher.js",
-    "./files": "./src/files.js",
-    "./rules": "./src/rules.js"
+    "./regex": "./src/regex.js",
+    "./rules": "./src/rules.js",
+    "./files": "./src/files.js"
+<<<<<<< HEAD
+  }
+=======
   },
   "main": "src/index.js"
+>>>>>>> 5943289 (initial commit)
 }

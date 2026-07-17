@@ -1,0 +1,12 @@
+scripts
+**/*.test.js
+<<<<<<< HEAD
+**/testing/
+**/_*
+package.json~
+=======
+**/*.benchmark.js
+**/testing/
+**/benchmarking/
+**/_*
+>>>>>>> 5943289 (initial commit)
