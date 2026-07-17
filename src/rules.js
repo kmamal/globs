@@ -1,5 +1,5 @@
-const Path = require('path')
-const { fromGlob } = require('./regex')
+const Path = require('node:path')
+const Regex = require('./regex')
 
 const fromGlobs = (globs, options) => {
 	const cwd = options?.cwd ? Path.resolve(options.cwd) : process.cwd()
@@ -10,7 +10,7 @@ const fromGlobs = (globs, options) => {
 		const hasSlash = globBody.slice(0, -1).includes('/')
 		const pre = hasSlash ? '' : '**'
 		const post = dir ? '**/*' : ''
-		const regex = fromGlob(Path.join(cwd, pre, globBody, post))
+		const regex = Regex.fromGlob(Path.join(cwd, pre, globBody, post))
 		return { regex, exclude, dir }
 	})
 }

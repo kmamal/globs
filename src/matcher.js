@@ -1,4 +1,4 @@
-const Path = require('path')
+const Path = require('node:path')
 const Rules = require('./rules')
 const Files = require('./files')
 
@@ -15,7 +15,8 @@ class Matcher {
 	}
 
 	matchesPath (path) {
-		const absPath = Path.resolve(this._options.cwd, path)
+		const trailingSlash = path.at(-1) === '/' ? '/' : ''
+		const absPath = Path.resolve(this._options.cwd, path) + trailingSlash
 		return Rules.matchAbsPath(this._rules, absPath)
 	}
 

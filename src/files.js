@@ -1,4 +1,4 @@
-const Path = require('path')
+const Path = require('node:path')
 const Rules = require('./rules')
 const { recurse } = require('@kmamal/recurse')
 
